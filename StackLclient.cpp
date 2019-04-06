@@ -7,8 +7,8 @@ using namespace std;
         
 string reverseString(string str)
 {
-     string res;
-     Stack stk;
+     string res; // declaring reverse string
+     Stack stk;  //creating an 
 
    for (auto ch : str ) 
       stk.push(ch);

@@ -17,7 +17,7 @@ class List::Node //self-referential Node class
 
 List::~List() //Destructor which removes memory from the heap
 {
-    while(num_elements > 0)
+    while(num_elements > 0)  // clear();
       remove(1);
 }
 	
@@ -57,7 +57,7 @@ void List::insert(int val, int k)
      num_elements++;
  }
 
-void List::remove(int k)
+void List::remove(int k) //removes the element from a particular location in the linked list
 {
 	if (k < 1 or k > num_elements)//if the location is invalid 
 	     throw out_of_range("List::remove(" +to_string(k)+") failed. (valid indices are 1 to "+to_string(num_elements)+")");//throw an "out_of_range" exception // going outside of the scope of the list
@@ -107,20 +107,8 @@ void List::remove(int k)
 		}
 void List::clear()
         {
-			Node*delPtr;
-			int k=1;
-		 
-		 while(frontPtr!=nullptr)
-		  { 
-			while(num_elements!=k)
-			{
-			  delPtr = frontPtr; //assign deleted pointer to front pointer 
-			  frontPtr = frontPtr->link; //accessing the data of the front pointer
-			  delete delPtr;
-			  }
-			  //delete pointer
-			num_elements--;//decrement the number of elements 
-			k++;
-			}
+			while(num_elements > 0)
+             remove(1);
+			
 	}
 	 
