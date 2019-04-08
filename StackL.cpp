@@ -7,24 +7,41 @@
 
    void Stack::push(int item)
        {
-			List*newPtr = new Node{item}; //assign a pointer  to a new node which contains the desired value to be added to the list
-			newPtr->link=frontPtr;
-			frontPtr=newPtr;
-			num_elements++;
+		   List*newPtr = new Node{item};
+		   if(num_elements==0)
+		     {
+				newPtr->link=frontPtr; 
+				frontPtr=newPtr;
+			   }
+		   else
+		   List*topPtr=frontPtr 
+		   for(int i=0;i<num_elements-1;i++) //if top is not at the end of stack
+		       {
+				   topPtr=topPtr->link
+				   newPtr->link=topPtr->link
+				   topPtr->link=newPtr
+			   }
+			   
+		 num_elements++;
        }
 
   void Stack::pop() //removes the element from a particular location in the linked list
 {
-	if(frontPtr==nullptr)
-	   { 
-		   cout<<"Stack is empty"<<endl;
-	   }
-	else
+	List*delPtr;
 	
-	{
-	  List*delPtr = frontPtr; //assign deleted pointer to front pointer 
-	  frontPtr = frontPtr->link; //accessing the data of the front pointer
-	}
+	if(num_elements==1)
+	  {
+		  delPtr=frontPtr;
+		  frontPtr=frontPtr->nullptr; //->link
+      } 
+     else
+     List*topPtr=frontPtr;
+     for(int i=0; i<num_elements;i++)
+         {
+			 topPtr=topPtr->link
+			 delPtr=topPtr->link
+			 topPtr->link=delPtr->link
+	     }
 	delete delPtr;  //delete pointer
 	num_elements--;//decrement the number of elements    
 }

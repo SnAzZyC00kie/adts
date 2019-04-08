@@ -11,10 +11,12 @@ class Stack
 {
   private:
 
-   List data;
-   List* frontPtr = nullptr; //top of stack
-   List*link;
-   int num_elements = 0;
+    List data;
+    
+    int data=0;
+    List*link= nullptr; 
+    List*frontPtr=nullptr; //behaves as the top pointer
+   
 
 public:
 
@@ -26,7 +28,7 @@ public:
 
    int size();
 
-   void push(int k);
+   void push(int item);
 
    void pop();
 
