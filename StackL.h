@@ -10,12 +10,16 @@
 class Stack
 {
   private:
-
-    List data;
     
-    int data=0;
+    int val=0;
+    List data;
     List*link= nullptr; 
     List*frontPtr=nullptr; //behaves as the top pointer
+    
+    List(int val)
+        {
+			item=val;
+	     }
    
 
 public:

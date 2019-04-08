@@ -48,17 +48,14 @@
    
    int Stack::top()
        {
-		    int element=1;
-		   while(frontPtr!=nullptr)
-		      {
-			        if(element==)
-		           {   
-					   return frontPtr->data;
-				   }  
-				   frontPtr=frontPtr->link;
-				   element++;
-		      }
-		      return -1; // Either element does not exist or no elements are in the list
+		    List*getPtr=frontPtr;
+		      if(num_elements!=1)
+			     
+			     for(int k=1;k<num_elements;k++) 
+			         {
+		                getPtr=getPtr->
+		             }
+		      return getPtr->data; // Either element does not exist or no elements are in the list
 	   }
    void Stack::clear()
        {
