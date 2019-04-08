@@ -9,9 +9,12 @@
 
 class Stack
 {
-private:
+  private:
 
    List data;
+   List* frontPtr = nullptr; //top of stack
+   List*link;
+   int num_elements = 0;
 
 public:
 
@@ -23,7 +26,7 @@ public:
 
    int size();
 
-   void push(int);
+   void push(int k);
 
    void pop();
 

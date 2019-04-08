@@ -11,6 +11,7 @@ class Stack
 private:
 
       vector<int> data;
+      int front=0u; //top of stack
   
 
 public:
@@ -22,9 +23,10 @@ public:
    // No d'tor needs to be declared
    // The vector "knows" how to destroy itself
 
+   ~Stack();
    int size();
 
-   void push(int);
+   void push(int val);
 
    void pop();
 
